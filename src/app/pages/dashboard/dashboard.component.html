@@ -1,10 +1,16 @@
-<div class="custom-bg w-screen h-screen overflow-scroll">
-  <div class="flex space-x-0 flex-row">
-    <div class="basis-60 hidden lg:block overflow-hidden shrink-0">
-      <app-side-nav></app-side-nav>
-    </div>
-    <div class="basis-full flex flex-col">
-      <app-nav-bar></app-nav-bar>
+<div class="custom-bg flex h-screen w-screen overflow-hidden">
+  <div
+    #sideBar
+    class="hidden border-r border-r-gray-400 lg:block shrink-0 lg:basis-60 bg-black backdrop-filter backdrop-blur-lg bg-opacity-20"
+  >
+    <app-side-nav (sideBar)="onCloseSideBar(sideBar)"></app-side-nav>
+  </div>
+  <div #contents class="basis-full flex flex-col">
+    <app-nav-bar
+      navLabel="Tableau de bord"
+      (sideBar)="onOpenSideBar(sideBar)"
+    ></app-nav-bar>
+    <div class="basis-full flex flex-col ml-4 overflow-y-scroll">
       <app-journals></app-journals>
       <app-dashboard-nav-options></app-dashboard-nav-options>
     </div>

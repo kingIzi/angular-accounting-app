@@ -18,4 +18,14 @@ export class FacturationComponent implements OnInit {
   backToAccountsPage() {
     this.location.back();
   }
+
+  onOpenSideBar(sideBar: any) {
+    sideBar.classList.remove('hidden');
+    sideBar.classList.add('block');
+  }
+
+  onCloseSideBar(sideBar: any) {
+    sideBar.classList.remove('block');
+    sideBar.classList.add('hidden');
+  }
 }

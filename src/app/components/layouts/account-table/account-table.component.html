@@ -41,19 +41,13 @@
         </select>
         <p class="sm:text-sm lg:text-lg text-amber-50">Affiché</p>
       </div>
-      <ul
-        class="flex flex-row space-x-2 duration-200 hover:bg-rose-700 bg-tahiti p-2 rounded-full"
+      <div
+        (click)="onAddItemClicked()"
+        class="text-xl text-amber-50 flex flex-row space-x-2 cursor-pointer"
       >
-        <li>
-          <fa-icon
-            class="text-xl text-amber-50"
-            [icon]="icons.faPlus"
-          ></fa-icon>
-        </li>
-        <li (click)="onAddItemClicked()" class="cursor-pointer">
-          <p class="text-xl tracking-widest text-amber-50">Ajouter</p>
-        </li>
-      </ul>
+        <fa-icon [icon]="icons.faPlus"></fa-icon>
+        <p>Ajouter</p>
+      </div>
     </div>
   </div>
   <div
@@ -105,10 +99,9 @@
         </button>
       </div>
       <div
-        (click)="onAddItemClicked()"
-        class="cursor-pointer flex flex-row space-x-2 text-xl text-amber-50 duration-200 hover:bg-rose-700 bg-tahiti p-2 rounded-full items-center"
+        class="relative text-xl text-amber-50 flex flex-row space-x-2 cursor-pointer"
       >
-        <fa-icon [icon]="icons.faPlus"></fa-icon>
+        <i><fa-icon [icon]="icons.faPlus"></fa-icon></i>
         <p>Ajouter</p>
       </div>
     </div>
