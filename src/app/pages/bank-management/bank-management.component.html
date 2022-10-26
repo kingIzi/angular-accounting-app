@@ -1,0 +1,250 @@
+<div class="custom-bg flex h-screen w-screen overflow-hidden">
+  <div
+    #sideBar
+    class="hidden lg:block shrink-0 lg:basis-60 border-2 bg-black backdrop-filter backdrop-blur-lg bg-opacity-20"
+  >
+    <app-side-nav (sideBar)="onCloseSideBar(sideBar)"></app-side-nav>
+  </div>
+  <div #contents class="basis-full flex flex-col border-2 border-green-500">
+    <app-nav-bar
+      [navLabel]="param"
+      (sideBar)="onOpenSideBar(sideBar)"
+    ></app-nav-bar>
+    <div class="basis-full overflow-x-scroll overflow-y-scroll smooth-scroll">
+      <div *ngIf="switchParam() == 0" class="flex flex-col">
+        <ul
+          class="text-2xl p-4 text-amber-50 hover:text-rose-700 flex flex-row space-x-2 cursor-pointer mb-12 border-b border-gray-500"
+          (click)="backToAccountsPage()"
+        >
+          <li>
+            <fa-icon [icon]="icons.faArrowLeft"></fa-icon>
+          </li>
+          <li><p>Retour</p></li>
+        </ul>
+        <div class="flex flex-row-reverse justify-between">
+          <ul
+            class="items-center flex flex-row space-x-2 duration-200 hover:bg-rose-700 bg-tahiti p-2 rounded-full mr-4"
+          >
+            <li>
+              <fa-icon
+                class="text-xl text-amber-50"
+                [icon]="icons.faPlus"
+              ></fa-icon>
+            </li>
+            <li>
+              <p class="cursor-pointer text-xl tracking-widest text-amber-50">
+                Ajouter
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="m-4">
+          <app-view-table-data
+            [tableHeaders]="['Id', 'Nom', 'Date']"
+            [fullTable]="true"
+          ></app-view-table-data>
+        </div>
+      </div>
+      <div *ngIf="switchParam() === 1" class="flex flex-col">
+        <ul
+          class="text-2xl p-4 text-amber-50 hover:text-rose-700 flex flex-row space-x-2 cursor-pointer mb-12 border-b border-gray-500"
+          (click)="backToAccountsPage()"
+        >
+          <li>
+            <fa-icon [icon]="icons.faArrowLeft"></fa-icon>
+          </li>
+          <li><p>Retour</p></li>
+        </ul>
+        <div class="flex flex-row-reverse justify-between">
+          <ul
+            class="items-center flex flex-row space-x-2 duration-200 hover:bg-rose-700 bg-tahiti p-2 rounded-full mr-4"
+          >
+            <li>
+              <fa-icon
+                class="text-xl text-amber-50"
+                [icon]="icons.faPlus"
+              ></fa-icon>
+            </li>
+            <li>
+              <p class="cursor-pointer text-xl tracking-widest text-amber-50">
+                Ajouter
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="m-4">
+          <app-view-table-data
+            [tableHeaders]="[
+              'Nom',
+              'Postnom',
+              'Prénom',
+              'E-mail',
+              'Téléphone',
+              'Nom d`utilisateur',
+              'Sexe',
+              'Date'
+            ]"
+            [fullTable]="true"
+          ></app-view-table-data>
+        </div>
+      </div>
+      <div *ngIf="switchParam() === 2">
+        <ul
+          class="text-2xl p-4 text-amber-50 hover:text-rose-700 flex flex-row space-x-2 cursor-pointer mb-12 border-b border-gray-500"
+          (click)="backToAccountsPage()"
+        >
+          <li>
+            <fa-icon [icon]="icons.faArrowLeft"></fa-icon>
+          </li>
+          <li><p>Retour</p></li>
+        </ul>
+        <div class="flex flex-row-reverse justify-between">
+          <ul
+            class="items-center flex flex-row space-x-2 duration-200 hover:bg-rose-700 bg-tahiti p-2 rounded-full mr-4"
+          >
+            <li>
+              <fa-icon
+                class="text-xl text-amber-50"
+                [icon]="icons.faPlus"
+              ></fa-icon>
+            </li>
+            <li>
+              <p class="cursor-pointer text-xl tracking-widest text-amber-50">
+                Ajouter
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="m-4">
+          <app-view-table-data
+            [tableHeaders]="[
+              'Id',
+              'Numéro de compte',
+              'Libellé',
+              'Agent',
+              'Date'
+            ]"
+            [fullTable]="true"
+          ></app-view-table-data>
+        </div>
+      </div>
+      <div *ngIf="switchParam() === 3">
+        <ul
+          class="text-2xl p-4 text-amber-50 hover:text-rose-700 flex flex-row space-x-2 cursor-pointer mb-12 border-b border-gray-500"
+          (click)="backToAccountsPage()"
+        >
+          <li>
+            <fa-icon [icon]="icons.faArrowLeft"></fa-icon>
+          </li>
+          <li><p>Retour</p></li>
+        </ul>
+        <div class="flex flex-row-reverse justify-between">
+          <ul
+            class="items-center flex flex-row space-x-2 duration-200 hover:bg-rose-700 bg-tahiti p-2 rounded-full mr-4"
+          >
+            <li>
+              <fa-icon
+                class="text-xl text-amber-50"
+                [icon]="icons.faPlus"
+              ></fa-icon>
+            </li>
+            <li>
+              <p class="cursor-pointer text-xl tracking-widest text-amber-50">
+                Ajouter
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="m-4">
+          <app-view-table-data
+            [tableHeaders]="[
+              'Devise d`origine',
+              'Devise de destination',
+              'Montant',
+              'Agent',
+              'Date'
+            ]"
+            [fullTable]="true"
+          ></app-view-table-data>
+        </div>
+      </div>
+      <div *ngIf="switchParam() === 4">
+        <ul
+          class="text-2xl p-4 text-amber-50 hover:text-rose-700 flex flex-row space-x-2 cursor-pointer mb-12 border-b border-gray-500"
+          (click)="backToAccountsPage()"
+        >
+          <li>
+            <fa-icon [icon]="icons.faArrowLeft"></fa-icon>
+          </li>
+          <li><p>Retour</p></li>
+        </ul>
+        <div class="flex flex-row-reverse justify-between">
+          <ul
+            class="items-center flex flex-row space-x-2 duration-200 hover:bg-rose-700 bg-tahiti p-2 rounded-full mr-4"
+          >
+            <li>
+              <fa-icon
+                class="text-xl text-amber-50"
+                [icon]="icons.faPlus"
+              ></fa-icon>
+            </li>
+            <li>
+              <p class="cursor-pointer text-xl tracking-widest text-amber-50">
+                Ajouter
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="m-4">
+          <app-view-table-data
+            [tableHeaders]="[
+              'Id',
+              'Numéro de compte',
+              'Libellé',
+              'Rubrique débiteur',
+              'Rubrique créditeur',
+              'Rubrique',
+              'Agent',
+              'Date'
+            ]"
+            [fullTable]="true"
+          ></app-view-table-data>
+        </div>
+      </div>
+      <div *ngIf="switchParam() === 5">
+        <ul
+          class="text-2xl p-4 text-amber-50 hover:text-rose-700 flex flex-row space-x-2 cursor-pointer mb-12 border-b border-gray-500"
+          (click)="backToAccountsPage()"
+        >
+          <li>
+            <fa-icon [icon]="icons.faArrowLeft"></fa-icon>
+          </li>
+          <li><p>Retour</p></li>
+        </ul>
+        <div class="flex flex-row-reverse justify-between">
+          <ul
+            class="items-center flex flex-row space-x-2 duration-200 hover:bg-rose-700 bg-tahiti p-2 rounded-full mr-4"
+          >
+            <li>
+              <fa-icon
+                class="text-xl text-amber-50"
+                [icon]="icons.faPlus"
+              ></fa-icon>
+            </li>
+            <li>
+              <p class="cursor-pointer text-xl tracking-widest text-amber-50">
+                Ajouter
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="m-4">
+          <app-view-table-data
+            [tableHeaders]="['Id', 'Name', 'Téléphone', 'Adresse', 'Date']"
+            [fullTable]="true"
+          ></app-view-table-data>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

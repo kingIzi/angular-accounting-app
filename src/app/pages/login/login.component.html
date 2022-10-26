@@ -1,0 +1,59 @@
+<div class="custom-bg w-screen h-screen overflow-hidden">
+  <main class="overflow-hidden w-full h-full grid place-items-center">
+    <div
+      class="flex flex-col space-y-4 border-2 border-gray-500 rounded p-4 bg-white backdrop-filter backdrop-blur-lg bg-opacity-20"
+    >
+      <div class="flex flex-col m-2">
+        <h4 class="font-body font-bold text-white text-4xl">Bienvenu</h4>
+        <h6 class="font-body text-amber-50 text-2xl">
+          Nous vous prions de vous connecter
+        </h6>
+      </div>
+      <div class="m-2">
+        <form action="" class="flex flex-col space-y-4">
+          <div class="flex flex-col space-y-2">
+            <label
+              class="text-2xl tracking-widest text-gray-200"
+              for="emailLabel"
+              >Addresse Email</label
+            >
+            <input
+              id="emailLabel"
+              type="email"
+              placeholder="Ecriver votre addresse email"
+              class="font-body rounded-full p-2 bg-white drop-shadow-2xl backdrop-filter backdrop-blur-lg bg-opacity-20"
+            />
+          </div>
+          <div class="flex flex-col space-y-2">
+            <label
+              class="text-2xl tracking-widest text-gray-200"
+              for="passwordLabel"
+              >Mot de passe</label
+            >
+            <input
+              id="passwordLabel"
+              type="password"
+              placeholder="Ecriver votre mot de passe"
+              class="font-body rounded-full p-2 bg-white drop-shadow-2xl backdrop-filter backdrop-blur-lg bg-opacity-20"
+            />
+          </div>
+          <div class="flex flex-row-reverse">
+            <div class="cursor-pointer hover:underline text-blue-300">
+              <p class="font-body uppercase">Mot de passe oublier?</p>
+            </div>
+          </div>
+          <button
+            class="p-2 w-full rounded-full bg-rose-700 text-amber-50 text-2xl tracking-widest hover:bg-white hover:text-black duration-300"
+            routerLink="/dashboard"
+          >
+            Connection
+          </button>
+          <p class="text-center">
+            Vous Avez pas de compte?
+            <span class="text-blue-300 hover:underline">Cliquer ici</span>
+          </p>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>

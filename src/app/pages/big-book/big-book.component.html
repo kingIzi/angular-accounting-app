@@ -1,0 +1,91 @@
+<div class="custom-bg flex h-screen w-screen overflow-hidden">
+  <div
+    #sideBar
+    class="hidden lg:block shrink-0 lg:basis-60 border-2 bg-black backdrop-filter backdrop-blur-lg bg-opacity-20"
+  >
+    <app-side-nav (sideBar)="onCloseSideBar(sideBar)"></app-side-nav>
+  </div>
+  <div #contents class="basis-full flex flex-col border-2">
+    <app-nav-bar
+      navLabel="Grand livre"
+      (sideBar)="onOpenSideBar(sideBar)"
+    ></app-nav-bar>
+    <div class="basis-full overflow-x-scroll overflow-y-scroll smooth-scroll">
+      <div class="flex flex-col">
+        <ul
+          class="text-2xl p-4 text-amber-50 hover:text-rose-700 flex flex-row space-x-2 cursor-pointer mb-4"
+          (click)="backToAccountsPage()"
+        >
+          <li>
+            <fa-icon [icon]="icons.faArrowLeft"></fa-icon>
+          </li>
+          <li><p>Retour</p></li>
+        </ul>
+        <div class="p-4 flex flex-row justify-between items-center">
+          <p class="text-2xl text-amber-50">Grand livre</p>
+          <div
+            class="absolute lg:right-0 flex flex-col lg:flex-row items-center space-x-4 mr-8"
+          >
+            <div class="flex flex-row">
+              <input
+                type="text"
+                placeholder="Recherche"
+                class="p-2 rounded-full"
+              />
+              <button
+                class="text-amber-50 bg-rose-700 rounded-full p-2 relative right-7"
+              >
+                <fa-icon [icon]="icons.faSearch"></fa-icon>
+              </button>
+            </div>
+            <div class="flex sm:flex-col lg:flex-row space-x-2">
+              <mat-form-field
+                class="bg-white backdrop-filter backdrop-blur-lg bg-opacity-20 text-amber-50 tracking-wider"
+              >
+                <input matInput [matDatepicker]="picker1" placeholder="Du" />
+                <mat-datepicker-toggle
+                  matSuffix
+                  [for]="picker1"
+                ></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+              </mat-form-field>
+            </div>
+            <div class="flex flex-row space-x-2">
+              <mat-form-field
+                class="bg-white backdrop-filter backdrop-blur-lg bg-opacity-20 text-amber-50 tracking-wider"
+              >
+                <input matInput [matDatepicker]="picker2" placeholder="Au" />
+                <mat-datepicker-toggle
+                  matSuffix
+                  [for]="picker2"
+                ></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col space-y-8 m-4">
+          <table class="table-auto">
+            <thead>
+              <tr class="bg-gray-900">
+                <th
+                  class="text-amber-50 text-lg"
+                  *ngFor="
+                    let header of [
+                      'Numéro de compte',
+                      'Libellé',
+                      'Agent',
+                      'Date'
+                    ]
+                  "
+                >
+                  {{ header }}
+                </th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

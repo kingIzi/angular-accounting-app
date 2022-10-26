@@ -1,0 +1,30 @@
+<!-- NavBar -->
+<div
+  class="basis-20 drop-shadow-2xl bg-black backdrop-filter backdrop-blur-lg rounded-full bg-opacity-20 p-4 flex flex-row items-center justify-between"
+>
+  <p class="text-2xl lg:text-4xl text-amber-50 tracking-widest">
+    {{ navLabel }}
+  </p>
+  <ul class="flex flex-row space-x-4">
+    <li>
+      <form class="flex flex-row mt-2">
+        <input
+          placeholder="Rechercher"
+          type="text"
+          class="lg:w-64 md:p-2 h-8 text-amber-50 bg-white backdrop-filter backdrop-blur-lg rounded-full bg-opacity-20"
+        />
+        <button
+          class="grid hover:bg-rose-700 place-items-center bg-white relative right-8 rounded-full w-8 h-8 text-black hover:text-white duration-200"
+        >
+          <fa-icon class="text-xl" [icon]="icons.faSearch"></fa-icon>
+        </button>
+      </form>
+    </li>
+    <li>
+      <button type="button" (click)="openSideBar()">
+        <fa-icon class="text-amber-50 text-4xl" [icon]="icons.faBars"></fa-icon>
+      </button>
+    </li>
+  </ul>
+</div>
+<!-- End NavBar -->

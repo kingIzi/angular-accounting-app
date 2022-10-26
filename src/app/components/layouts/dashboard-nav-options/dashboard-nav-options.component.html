@@ -1,0 +1,15 @@
+<div
+  class="mt-4 p-6 flex space-y-8 flex-col bg-black backdrop-filter backdrop-blur-lg bg-opacity-20"
+>
+  <p class="text-4xl text-amber-50 tracking-widest uppercase">
+    Rapport des factures
+  </p>
+  <div class="grid grid-cols-2 gap-2">
+    <div class="row-span-2 col-span-2 md:col-span-1">
+      <canvasjs-chart [options]="outwardInvoices"></canvasjs-chart>
+    </div>
+    <div class="row-span-2 col-span-2 md:col-span-1">
+      <canvasjs-chart [options]="inwardInvoices"></canvasjs-chart>
+    </div>
+  </div>
+</div>

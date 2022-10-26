@@ -1,0 +1,126 @@
+<table *ngIf="actifBalanceSheet" class="table-auto">
+  <thead>
+    <tr class="flex flex-row space-x-4 bg-gray-900">
+      <th class="text-lg text-amber-50">Ref</th>
+      <th class="text-lg text-amber-50">Actif</th>
+      <th class="text-lg text-amber-50">Note</th>
+      <th class="text-lg text-amber-50 w-80">
+        EXERCICE au 32/21/N
+        <div class="grid place-items-center">
+          <table class="table-auto">
+            <thead>
+              <tr class="flex flex-row items-center">
+                <th class="p-2 text-amber-50 border-r border-gray-100">BRUT</th>
+                <th class="p-2 text-amber-50 border-r border-gray-100">
+                  Amort et Deprec
+                </th>
+                <th class="p-2 text-amber-50 border-r border-gray-100">Net</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </th>
+      <th class="text-lg text-amber-50">Exercice au 31/12/N-1</th>
+    </tr>
+  </thead>
+</table>
+
+<table *ngIf="!actifBalanceSheet" class="table-auto">
+  <thead>
+    <tr class="flex flex-row space-x-4 bg-gray-900">
+      <th class="text-lg text-amber-50">REF</th>
+      <th class="text-lg text-amber-50">ACTIF</th>
+      <th class="text-lg text-amber-50">NOTE</th>
+      <th class="text-lg text-amber-50">
+        <p>Exercice au 31/12N</p>
+        <p>NET</p>
+      </th>
+      <th class="text-lg text-amber-50">
+        <p>Exercice au 31/12N-1</p>
+        <p>NET</p>
+      </th>
+    </tr>
+  </thead>
+</table>
+
+<!-- <table *ngIf="actifBalanceSheet">
+  <thead>
+    <tr>
+      <th
+        class="p-1 text-amber-50 text-xl text-center w-36 bg-black backdrop-filter backdrop-blur-lg bg-opacity-20 border-r border-rose-500 tracking-widest"
+      >
+        Ref
+      </th>
+      <th
+        class="p-1 text-amber-50 text-xl text-center w-72 bg-black backdrop-filter backdrop-blur-lg bg-opacity-20 border-r border-rose-500 tracking-widest"
+      >
+        Actif
+      </th>
+      <th
+        class="p-1 text-amber-50 text-xl text-center w-36 bg-black backdrop-filter backdrop-blur-lg bg-opacity-20 border-r border-rose-500 tracking-widest"
+      >
+        Note
+      </th>
+      <th
+        class="flex flex-col bg-black backdrop-filter backdrop-blur-lg bg-opacity-20 border-r border-rose-500 tracking-widest"
+      >
+        <p class="p-1 text-amber-50 text-xl w-96">EXERCICE au 32/21/N</p>
+        <table>
+          <thead>
+            <tr>
+              <th class="text-amber-50">BRUT</th>
+              <th class="text-amber-50">Amort et Deprec</th>
+              <th class="text-amber-50">Net</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="text-amber-50"></tr>
+          </tbody>
+        </table>
+      </th>
+      <th
+        class="p-1 text-amber-50 text-xl text-center w-56 bg-black backdrop-filter backdrop-blur-lg bg-opacity-20 border-r border-rose-500 tracking-widest"
+      >
+        Exercice au 31/12/N-1
+      </th>
+    </tr>
+  </thead>
+</table>
+
+<table *ngIf="!actifBalanceSheet">
+  <thead>
+    <tr>
+      <th
+        class="border-r border-rose-500 text-amber-50 text-xl bg-black backdrop-filter backdrop-blur-lg bg-opacity-20 tracking-widest w-1/6"
+      >
+        Ref
+      </th>
+      <th
+        class="border-r border-rose-500 text-amber-50 text-xl bg-black backdrop-filter backdrop-blur-lg bg-opacity-20 tracking-widest w-1/5"
+      >
+        Actif
+      </th>
+      <th
+        class="border-r border-rose-500 text-amber-50 text-xl bg-black backdrop-filter backdrop-blur-lg bg-opacity-20 tracking-widest w-1/6"
+      >
+        Note
+      </th>
+      <th
+        class="border-r border-rose-500 bg-black backdrop-filter backdrop-blur-lg bg-opacity-20 tracking-widest w-1/4"
+      >
+        <div class="flex flex-col">
+          <p class="text-xl text-amber-50">Exercice au 31/12N</p>
+          <p class="text-xl text-amber-50">Net</p>
+        </div>
+      </th>
+      <th
+        class="border-r border-rose-500 bg-black backdrop-filter backdrop-blur-lg bg-opacity-20 tracking-widest w-64"
+      >
+        <div class="flex flex-col">
+          <p class="text-xl text-amber-50">Exercice au 31/12N-1</p>
+          <p class="text-xl text-amber-50">Net</p>
+        </div>
+      </th>
+    </tr>
+  </thead>
+</table> -->

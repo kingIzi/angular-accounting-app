@@ -1,0 +1,27 @@
+.curve-div {
+  background-image: linear-gradient(to bottom, #1f2e56, #64328a);
+}
+
+.custom-bg {
+  background-image: linear-gradient(to bottom, #000, #64328a);
+}
+
+.heading-text {
+  font-size: 80px;
+  letter-spacing: 1px;
+  line-height: 100px;
+  @media only screen and (max-width: 600px) {
+    font-size: 40px;
+    line-height: 60px;
+  }
+}
+
+.desc-text {
+  font-size: 40px;
+  letter-spacing: 1px;
+  line-height: 60px;
+  @media only screen and (max-width: 600px) {
+    font-size: 20px;
+    line-height: 40px;
+  }
+}

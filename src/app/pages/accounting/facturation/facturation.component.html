@@ -1,0 +1,91 @@
+<div class="custom-bg w-screen h-screen overflow-y-scroll">
+  <div class="flex space-x-0 flex-row">
+    <div class="basis-60 hidden lg:block overflow-hidden shrink-0">
+      <app-side-nav></app-side-nav>
+    </div>
+    <div
+      class="basis-full flex flex-col scroll-smooth sm:overflow-y-scroll sm:overflow-x-hidden lg:overflow-hidden"
+    >
+      <app-nav-bar navLabel="Facturation"></app-nav-bar>
+      <div class="basis-full">
+        <div class="relative p-8">
+          <div class="flex flex-col">
+            <ul
+              class="text-2xl text-amber-50 hover:text-rose-700 flex flex-row space-x-2 cursor-pointer mb-12 border-b border-gray-500"
+              (click)="backToAccountsPage()"
+            >
+              <li>
+                <fa-icon [icon]="icons.faArrowLeft"></fa-icon>
+              </li>
+              <li><p>Retour</p></li>
+            </ul>
+            <div class="flex flex-row justify-between items-center">
+              <p class="text-2xl text-amber-50">Facturation</p>
+              <div
+                class="absolute right-0 flex flex-row space-x-4 items-center"
+              >
+                <div class="flex sm:flex-col lg:flex-row space-x-2">
+                  <mat-form-field
+                    class="bg-white backdrop-filter backdrop-blur-lg bg-opacity-20 text-amber-50 tracking-wider"
+                  >
+                    <input
+                      matInput
+                      [matDatepicker]="picker1"
+                      placeholder="Du"
+                    />
+                    <mat-datepicker-toggle
+                      matSuffix
+                      [for]="picker1"
+                    ></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                  </mat-form-field>
+                </div>
+                <div class="flex flex-row space-x-2">
+                  <mat-form-field
+                    class="bg-white backdrop-filter backdrop-blur-lg bg-opacity-20 text-amber-50 tracking-wider"
+                  >
+                    <input
+                      matInput
+                      [matDatepicker]="picker2"
+                      placeholder="Au"
+                    />
+                    <mat-datepicker-toggle
+                      matSuffix
+                      [for]="picker2"
+                    ></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 flex flex-col space-y-8">
+              <table class="table-fixed">
+                <thead>
+                  <tr class="bg-gray-900">
+                    <th
+                      class="text-lg text-amber-50"
+                      *ngFor="
+                        let header of [
+                          'Id',
+                          'Date',
+                          'Numéro',
+                          'Client',
+                          'Montant total',
+                          'Devise',
+                          'Statut',
+                          'User'
+                        ]
+                      "
+                    >
+                      {{ header }}
+                    </th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

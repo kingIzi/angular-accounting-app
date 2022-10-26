@@ -1,0 +1,167 @@
+<div class="flex flex-col p-4 space-y-4">
+  <div
+    *ngIf="selectedTableValue == displayItems[0]"
+    class="flex flex-col space-y-4 md:flex-row justify-between"
+  >
+    <select
+      #doc
+      class="p-2 w-64 text-2xl text-amber-50 bg-white backdrop-filter backdrop-blur-lg bg-opacity-20"
+      name=""
+      id="account-table-id"
+      (change)="onDocumentValueChanged(doc.value)"
+      [value]="selectedTableValue"
+      [(ngModel)]="selectedTableValue"
+    >
+      <option
+        *ngFor="let y of getDiplayTableItems()"
+        class="bg-black text-black backdrop-filter backdrop-blur-lg bg-opacity-20"
+        [value]="y"
+      >
+        {{ y }}
+      </option>
+    </select>
+    <div class="flex flex-row items-center space-x-6">
+      <div class="flex flex-row space-x-2">
+        <select
+          #chunks
+          class="text-amber-50 text-2xl bg-white backdrop-filter backdrop-blur-lg bg-opacity-20"
+          name="entries"
+          id=""
+          [value]="selectedTableChunk"
+          [(ngModel)]="selectedTableChunk"
+          (change)="onDisplayTableChunksChanged(chunks.value)"
+        >
+          <option
+            class="text-lg text-black bg-black backdrop-filter backdrop-blur-lg bg-opacity-20"
+            [value]="p"
+            *ngFor="let p of getDisplayTableChunks()"
+          >
+            {{ p }}
+          </option>
+        </select>
+        <p class="sm:text-sm lg:text-lg text-amber-50">Affiché</p>
+      </div>
+      <ul
+        class="flex flex-row space-x-2 duration-200 hover:bg-rose-700 bg-tahiti p-2 rounded-full"
+      >
+        <li>
+          <fa-icon
+            class="text-xl text-amber-50"
+            [icon]="icons.faPlus"
+          ></fa-icon>
+        </li>
+        <li (click)="onAddItemClicked()" class="cursor-pointer">
+          <p class="text-xl tracking-widest text-amber-50">Ajouter</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    *ngIf="selectedTableValue == displayItems[1]"
+    class="flex flex-col space-y-4 md:flex-row justify-between"
+  >
+    <select
+      #doc
+      class="p-2 w-64 text-2xl text-amber-50 bg-white backdrop-filter backdrop-blur-lg bg-opacity-20"
+      name=""
+      id="account-table-id"
+      (change)="onDocumentValueChanged(doc.value)"
+      [value]="selectedTableValue"
+      [(ngModel)]="selectedTableValue"
+    >
+      <option
+        *ngFor="let y of getDiplayTableItems()"
+        class="bg-black text-black backdrop-filter backdrop-blur-lg bg-opacity-20"
+        [value]="y"
+      >
+        {{ y }}
+      </option>
+    </select>
+    <div class="flex flex-row items-center space-x-6">
+      <div class="flex flex-row space-x-2">
+        <select
+          #chunks
+          class="text-amber-50 text-2xl bg-white backdrop-filter backdrop-blur-lg bg-opacity-20"
+          name="entries"
+          id=""
+          [value]="selectedTableChunk"
+          [(ngModel)]="selectedTableChunk"
+          (change)="onDisplayTableChunksChanged(chunks.value)"
+        >
+          <option
+            class="text-lg text-black bg-black backdrop-filter backdrop-blur-lg bg-opacity-20"
+            [value]="p"
+            *ngFor="let p of getDisplayTableChunks()"
+          >
+            {{ p }}
+          </option>
+        </select>
+        <p class="sm:text-sm lg:text-lg text-amber-50">Affiché</p>
+        <button class="text-xl text-amber-50 rounded-full p-2 bg-red-700">
+          Importer
+        </button>
+        <button class="text-xl text-amber-50 rounded-full p-2 bg-green-700">
+          Exporter
+        </button>
+      </div>
+      <div
+        (click)="onAddItemClicked()"
+        class="cursor-pointer flex flex-row space-x-2 text-xl text-amber-50 duration-200 hover:bg-rose-700 bg-tahiti p-2 rounded-full items-center"
+      >
+        <fa-icon [icon]="icons.faPlus"></fa-icon>
+        <p>Ajouter</p>
+      </div>
+    </div>
+  </div>
+  <div
+    *ngIf="selectedTableValue == displayItems[0]"
+    class="grid place-items-center"
+  >
+    <!-- <app-view-table-data
+      [tableData]="tableData"
+      [tableHeaders]="tableHeaders"
+    ></app-view-table-data> -->
+    <table class="table-auto">
+      <thead class="bg-gray-900">
+        <tr class="flex flex-row space-x-4">
+          <th class="text-lg text-amber-50" *ngFor="let i of tableHeaders">
+            {{ i }}
+          </th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div
+    *ngIf="selectedTableValue == displayItems[1]"
+    class="grid place-items-center"
+  >
+    <table class="table-auto">
+      <thead class="bg-gray-900">
+        <tr class="flex flex-row space-x-4">
+          <th
+            class="text-lg text-amber-50"
+            *ngFor="
+              let i of [
+                'Id',
+                'Date',
+                'Numéro',
+                'Compte à débiter',
+                'Compte à créditer',
+                'Intitulé du compte',
+                'Description',
+                'Pièce',
+                'Débit',
+                'Crédit',
+                'Devise',
+                'Agent',
+                'Statut'
+              ]
+            "
+          >
+            {{ i }}
+          </th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+</div>

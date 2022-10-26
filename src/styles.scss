@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Cambay&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// body {
+//   background-image: linear-gradient(to bottom, #000, #64328a) !important;
+// }
+
+// html {
+//   background-image: linear-gradient(to bottom, #000, #64328a) !important;
+// }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

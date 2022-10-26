@@ -1,0 +1,175 @@
+<div class="flex flex-col">
+  <p class="text-4xl text-center">Paramètrage de l'entreprise</p>
+  <div class="rounded grid grid-cols-2 grid-rows-6 h-full">
+    <div class="col-span-1 row-span-full grid place-items-center">
+      <p class="text-2xl {{ url ? 'hidden' : 'block' }}">
+        Choisissez votre logo
+      </p>
+      <img
+        [src]="url"
+        class="{{ url ? 'block' : 'hidden' }} w-80 h-80"
+        alt=""
+      />
+      <input
+        #logoInputFile
+        type="file"
+        (change)="onSelectFileChanged($event)"
+        placeholder="select image"
+        accept="image/*"
+      />
+    </div>
+    <form
+      class="col-span-1 row-span-full bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+    >
+      <div class="flex flex-col lg:flex-row">
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="entreprise-name"
+          >
+            Nom de l'entreprise
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="entreprise-name"
+            type="text"
+            placeholder="Ecriver le nom de l'entreprise"
+          />
+        </div>
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="id-national"
+          >
+            Id National
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="id-national"
+            type="text"
+            placeholder="Ecriver l'identification national"
+          />
+        </div>
+      </div>
+      <div class="flex flex-col lg:flex-row">
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="rccm-id"
+          >
+            RCCM
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="rccm-id"
+            type="text"
+            placeholder="Ecriver le RCCM"
+          />
+        </div>
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="tax-number"
+          >
+            Numéro d'impôt
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="tax-number"
+            type="text"
+            placeholder="Ecriver numéro d'impôt"
+          />
+        </div>
+      </div>
+      <div class="flex flex-col lg:flex-row lg:space-x-24">
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="juridical-form"
+          >
+            Forme juridique
+          </label>
+          <select
+            name=""
+            id="juridical-form"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          >
+            <option value="SARL">SARL</option>
+            <option value="SA">SA</option>
+            <option value="SNV">SNV</option>
+            <option value="Privee">Privee</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="type-id"
+          >
+            Type
+          </label>
+          <select
+            name=""
+            id="type-id"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          >
+            <option value="Commerciale">Commerciale</option>
+            <option value="Service">Service</option>
+            <option value="Industrielle">Industrielle</option>
+            <option value="(Autre)">Autre</option>
+          </select>
+        </div>
+      </div>
+      <div class="flex flex-col lg:flex-row">
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="address-id"
+          >
+            Addresse Mail
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="address-id"
+            type="text"
+            placeholder="Ecriver le RCCM"
+          />
+        </div>
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2"
+            for="tel-id"
+          >
+            Téléphone
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="tel-id"
+            type="text"
+            placeholder="Ecriver le numéro de telephone"
+          />
+        </div>
+      </div>
+      <div class="mb-4">
+        <label
+          class="block text-gray-700 text-sm font-bold mb-2"
+          for="residendial-address-id"
+        >
+          Addresse Residentielle
+        </label>
+        <input
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="residendial-address-id"
+          type="text"
+          placeholder="Ecriver l'addresse Residentielle"
+        />
+      </div>
+      <div class="relative mb-4">
+        <button
+          class="float-right p-2 text-xl text-amber-50 bg-tahiti rounded-full"
+        >
+          Valider
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

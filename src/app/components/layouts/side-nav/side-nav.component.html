@@ -1,0 +1,37 @@
+<div class="flex flex-col space-y-8">
+  <div class="p-4 flex flex-row-reverse lg:hidden">
+    <button
+      (click)="closeSideBar()"
+      type="button"
+      class="text-white text-4xl hover:text-rose-700 duration-200"
+    >
+      <fa-icon [icon]="icons.faClose"></fa-icon>
+    </button>
+  </div>
+  <div class="basis-5/6 p-2 bg-tahiti flex flex-col">
+    <img
+      src="https://randomuser.me/api/portraits/women/34.jpg"
+      class="rounded-full w-16 h-16"
+      alt=""
+    />
+    <p class="text-lg text-amber-50">Scott.izidore@gmail.com</p>
+    <p class="text-lg text-amber-50">+ 243 81 56 93 534</p>
+  </div>
+  <ul class="p-2 m-4">
+    <li class="mb-6" *ngFor="let k of sideNavItems">
+      <a
+        [routerLink]="k.path"
+        class="cursor-pointer flex flex-row space-x-4 text-xl text-white hover:text-rose-700 duration-200"
+      >
+        <fa-icon [icon]="icons.faHome"></fa-icon>
+        <p>{{ k.name }}</p>
+      </a>
+    </li>
+  </ul>
+  <div
+    class="cursor-pointer flex mt-40 flex-row space-x-4 text-2xl justify-center items-center text-red-500"
+  >
+    <a>Deconnecter</a>
+    <span><fa-icon [icon]="icons.faArrowRight"></fa-icon></span>
+  </div>
+</div>
